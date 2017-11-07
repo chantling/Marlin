@@ -73,12 +73,12 @@
 //
 #define X_MIN_PIN           3
 #ifndef X_MAX_PIN
-  #define X_MAX_PIN         2
+//  #define X_MAX_PIN         2
 #endif
 #define Y_MIN_PIN          14
-#define Y_MAX_PIN          15
+//#define Y_MAX_PIN          15
 #define Z_MIN_PIN          18
-#define Z_MAX_PIN          19
+//#define Z_MAX_PIN          19
 
 //
 // Z Probe (when not Z_MIN_PIN)
@@ -224,15 +224,18 @@
 //
 #if ENABLED(SPINDLE_LASER_ENABLE) && !PIN_EXISTS(SPINDLE_LASER_ENABLE)
   #if !defined(NUM_SERVOS) || NUM_SERVOS == 0 // try to use servo connector first
-    #define SPINDLE_LASER_ENABLE_PIN  4  // Pin should have a pullup/pulldown!
-    #define SPINDLE_LASER_PWM_PIN     6  // MUST BE HARDWARE PWM
-    #define SPINDLE_DIR_PIN           5
+    #define SPINDLE_LASER_ENABLE_PIN  15 //4  // Pin should have a pullup/pulldown!
+    #define SPINDLE_LASER_PWM_PIN     2 // 6  // MUST BE HARDWARE PWM
+    #define SPINDLE_DIR_PIN           19 //5
   #elif !(ENABLED(ULTRA_LCD) && ENABLED(NEWPANEL) \
       && (ENABLED(PANEL_ONE) || ENABLED(VIKI2) || ENABLED(miniVIKI) || ENABLED(MINIPANEL) || ENABLED(REPRAPWORLD_KEYPAD)))  // try to use AUX 2
-    #define SPINDLE_LASER_ENABLE_PIN 40  // Pin should have a pullup/pulldown!
-    #define SPINDLE_LASER_PWM_PIN    44  // MUST BE HARDWARE PWM
-    #define SPINDLE_DIR_PIN          65
-  #endif
+    #define SPINDLE_LASER_ENABLE_PIN 15 //Y+ enstop 40  // Pin should have a pullup/pulldown!
+    #define SPINDLE_LASER_PWM_PIN    2 // X+ endstop 44  // MUST BE HARDWARE PWM
+    #define SPINDLE_DIR_PIN          19 //Z+ endstop 65
+	#endif
+    #define SPINDLE_LASER_ENABLE_PIN 6 //Y+ enstop 40  // Pin should have a pullup/pulldown!
+    #define SPINDLE_LASER_PWM_PIN    2 // X+ endstop 44  // MUST BE HARDWARE PWM
+    #define SPINDLE_DIR_PIN          19 //Z+ endstop 65
 #endif
 
 //
