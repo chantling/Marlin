@@ -150,7 +150,7 @@
 // Heaters / Fans
 //
 #ifndef MOSFET_D_PIN
-  #define MOSFET_D_PIN  -1
+  #define MOSFET_D_PIN  7
 #endif
 #ifndef RAMPS_D8_PIN
   #define RAMPS_D8_PIN   8
@@ -224,16 +224,16 @@
 #if ENABLED(SPINDLE_LASER_ENABLE) && !PIN_EXISTS(SPINDLE_LASER_ENABLE)
   #if !defined(NUM_SERVOS) || NUM_SERVOS == 0 // try to use servo connector first
     #define SPINDLE_LASER_ENABLE_PIN  15 //4  // Pin should have a pullup/pulldown!
-    #define SPINDLE_LASER_PWM_PIN     2 // 6  // MUST BE HARDWARE PWM
+    #define SPINDLE_LASER_PWM_PIN     7 // 6  // MUST BE HARDWARE PWM
     #define SPINDLE_DIR_PIN           19 //5
   #elif !(ENABLED(ULTRA_LCD) && ENABLED(NEWPANEL) \
       && (ENABLED(PANEL_ONE) || ENABLED(VIKI2) || ENABLED(miniVIKI) || ENABLED(MINIPANEL) || ENABLED(REPRAPWORLD_KEYPAD)))  // try to use AUX 2
     #define SPINDLE_LASER_ENABLE_PIN 15 //Y+ enstop 40  // Pin should have a pullup/pulldown!
-    #define SPINDLE_LASER_PWM_PIN    2 // X+ endstop 44  // MUST BE HARDWARE PWM
+    #define SPINDLE_LASER_PWM_PIN    7 // X+ endstop 44  // MUST BE HARDWARE PWM
     #define SPINDLE_DIR_PIN          19 //Z+ endstop 65
 	#endif
     #define SPINDLE_LASER_ENABLE_PIN 6 //Y+ enstop 40  // Pin should have a pullup/pulldown!
-    #define SPINDLE_LASER_PWM_PIN    2 // X+ endstop 44  // MUST BE HARDWARE PWM
+    #define SPINDLE_LASER_PWM_PIN    7 // X+ endstop 44  // MUST BE HARDWARE PWM
     #define SPINDLE_DIR_PIN          19 //Z+ endstop 65
 #endif
 
