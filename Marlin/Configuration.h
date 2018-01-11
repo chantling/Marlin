@@ -710,7 +710,7 @@
 #define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 1)
 
 // Use double touch for probing
-#define PROBE_DOUBLE_TOUCH
+#define MULTIPLE_PROBING 2
 
 /**
  * Z probes require clearance when deploying, stowing, and moving between
@@ -971,7 +971,7 @@
   //========================= Unified Bed Leveling ============================
   //===========================================================================
 
-  #define UBL_MESH_INSET 10          // Mesh inset margin on print area
+  #define MESH_INSET 10          // Mesh inset margin on print area
   #define GRID_MAX_POINTS_X 10      // Don't use more than 15 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y 15
 
@@ -982,7 +982,7 @@
   #define UBL_PROBE_PT_3_X 190
   #define UBL_PROBE_PT_3_Y 260
 
-  #define UBL_G26_MESH_VALIDATION   // Enable G26 mesh validation
+  #define G26_MESH_VALIDATION   // Enable G26 mesh validation
   #define UBL_MESH_EDIT_MOVES_Z     // Sophisticated users prefer no movement of nozzle
   #define UBL_SAVE_ACTIVE_ON_M500   // Save the currently active mesh in the current slot on M500
 
